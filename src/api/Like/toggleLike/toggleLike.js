@@ -1,9 +1,8 @@
-import { isAuthenticated } from "../../../middlewares";
 import { prisma } from "../../../../generated/prisma-client";
 
 export default {
     Mutation: {
-        toggleLike: async (_, args, { request }) => {
+        toggleLike: (_, args, { request, isAuthenticated }) => {
             isAuthenticated(request);
 
             const { postId } = args;
@@ -19,7 +18,7 @@ export default {
                 ]
             };
 
-            return await prisma.$exists
+            return prisma.$exists
                 .like(filterOptions)
                 .then(async (existingLike) => {
                     if (existingLike) {
