@@ -63,3 +63,4 @@ typings/
 .idea
 .DS_Store
 generated
+prisma.yml
