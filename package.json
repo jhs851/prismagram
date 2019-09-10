@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jhs851/prismagram.git"
+    "url": "https://github.com/jhs851/prismagram"
   },
   "author": "",
   "license": "MIT",
@@ -15,11 +15,13 @@
     "url": "https://github.com/jhs851/prismagram/issues"
   },
   "homepage": "https://github.com/jhs851/prismagram#readme",
-  "dependencies": {
-    "babel-cli": "^6.26.0",
-    "graphql-yoga": "^1.18.3"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/preset-env": "^7.6.0",
+    "dotenv": "^8.1.0",
+    "graphql-yoga": "^1.18.3",
     "nodemon": "^1.19.2"
   }
 }
