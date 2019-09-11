@@ -4,20 +4,16 @@ export default {
     User: {
         fullName: parent =>
             `${parent.firstName} ${parent.lastName}`,
-        amIFollowing: (parent, _, { request }) => {
-            const { user } = request;
-            const { id: parentId } = parent;
-
-            return prisma.$exists
-                .user({
-                    AND: [
-                        { id: parentId },
-                        { followers_some: [user.id] }
-                    ]
-                })
-                .catch(() => false);
-        },
-        itsMe: (parent, _, { request }) =>
+        isFollowing: (parent, _, { request }) =>
+            prisma.$exists.user({
+                AND: [
+                    { id: request.user.id },
+                    {
+                        following_some: { id: paremt.id }
+                    }
+                ]
+            }),
+        isSelf: (parent, _, { request }) =>
             request.user.id === parent.id
     }
 }
