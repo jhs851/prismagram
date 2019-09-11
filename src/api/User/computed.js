@@ -9,24 +9,11 @@ export default {
                 AND: [
                     { id: request.user.id },
                     {
-                        following_some: { id: paremt.id }
+                        following_some: { id: parent.id }
                     }
                 ]
             }),
         isSelf: (parent, _, { request }) =>
             request.user.id === parent.id
-    },
-    Post: {
-        isLiked: (parent, _, { request }) =>
-            prisma.$exists.like({
-                AND: [
-                    {
-                        user: { id: request.user.id },
-                    },
-                    {
-                        post: { id: parent.id }
-                    }
-                ]
-            })
     }
 }
