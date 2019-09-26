@@ -1,5 +1,4 @@
 import { prisma } from '../../../../generated/prisma-client';
-import { ROOM_FRAGEMENT } from '../../../fragments';
 
 export default {
     Mutation: {
@@ -19,10 +18,10 @@ export default {
                                 { id: user.id }
                             ]
                         }
-                    }).$fragment(ROOM_FRAGEMENT);
+                    });
                 }
             } else {
-                room = await prisma.room({ id: roomId }).$fragment(ROOM_FRAGEMENT);
+                room = await prisma.room({ id: roomId });
             }
 
             if (! room) {
