@@ -20,7 +20,7 @@
   "homepage": "https://github.com/jhs851/prismagram#readme",
   "dependencies": {
     "graphql-tools": "^4.0.5",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "merge-graphql-schemas": "^1.7.0",
     "morgan": "^1.9.1",
     "nodemailer": "^6.3.0",
